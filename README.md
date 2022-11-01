@@ -27,8 +27,9 @@ sudo ufw allow 22/tcp //ssh port
 ```bash
 cd /etc/mysql/mysql.conf.d
 nano mysqld.cnf 
+bind-address = 0.0.0.0 yap
 ```
-> bind-address = 0.0.0.0 yap
+
 ```bash
 sudo systemctl start mysql
 sudo systemctl enable mysql
