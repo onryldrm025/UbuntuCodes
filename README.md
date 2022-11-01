@@ -1,10 +1,10 @@
 # UbuntuCodes
 
--- sudo apt update 
--- sudo apt upgrade 
--- sudo apt install mysql-server mysql-client
+> sudo apt update 
+> sudo apt upgrade 
+> sudo apt install mysql-server mysql-client
 ——
-sudo mysql_secure_installation
+>sudo mysql_secure_installation
 > y > şifre belirleme
 —
 2. Yol
