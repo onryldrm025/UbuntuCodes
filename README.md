@@ -43,3 +43,14 @@ CREATE USER 'new_user’@‘staticIp’ IDENTIFIED BY 'new_password';
 GRANT ALL ON my_db.* TO 'new_user’@’staticIp;
 FLUSH PRIVILEGES;
 ```
+
+# Nginx
+
+```bash
+sudo apt install nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo ufw allow 'Nginx Full'
+sudo ufw enable
+nginx -v
+```
