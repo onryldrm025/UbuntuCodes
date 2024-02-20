@@ -50,7 +50,23 @@ FLUSH PRIVILEGES;
 sudo apt install nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
-sudo ufw allow 'Nginx Full'
-sudo ufw enable
+sudo systemctl restart nginx
+sudo ufw allow 'Nginx Full' 
+sudo ufw enable // dikkat et ssh acik degilse 
 nginx -v
+
+ server {
+  listen 80;
+  listen [::]:80;
+  server_name www.deneme.com deneme.com
+
+  location / {
+      proxy_pass http://localhost:3040;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      
+  }
+}
+nginx -t
 ```
