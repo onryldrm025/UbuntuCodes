@@ -54,7 +54,8 @@ sudo systemctl restart nginx
 sudo ufw allow 'Nginx Full' 
 sudo ufw enable // dikkat et ssh acik degilse 
 nginx -v
-
+nginx -t
+ln -s /etc/nginx/sites-available/deneme /etc/nginx/sites-enabled/
  server {
   listen 80;
   listen [::]:80;
@@ -68,5 +69,12 @@ nginx -v
       
   }
 }
-nginx -t
+```
+
+# Kullanisli
+
+```bash
+rsync -av --exclude='node_modules' /Users/onuryildirim/Desktop/dosya/ root@192.1.1.1:/home/root/deneme
+sudo certbot --nginx -d deneme.com -d www.deneme.dom
+sudo certbot delete --cert-name deneme.com
 ```
